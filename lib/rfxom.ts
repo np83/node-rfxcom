@@ -4,7 +4,7 @@ interface ISerialport {
     write(buffer: number[], callback: (err, response) => any);
     on: (ev: string, dataCallBack: (data: number[]) => any) => any;
     flush(callBack: () => void);
-};
+}
 
 interface IOptions {
     debug: boolean;
@@ -71,21 +71,21 @@ interface IElec23Event extends IBasicEvent {
     count: number;
     currentWatts: number;
     totalWatts: number;
-};
+}
 
 interface ISecurity1Event extends IBasicEvent {
     deviceStatus: number;
     batteryLevel: number;
     rssi: number;
     tampered: number;
-};
+}
 
 interface ITemp19Event extends IBasicEvent {
     seqnbr: number;
     temperature: number;
     batteryLevel: number;
     rssi: number;
-};
+}
 
 interface ITemphumidity19Event extends IBasicEvent {
     seqnbr: number;
@@ -94,7 +94,7 @@ interface ITemphumidity19Event extends IBasicEvent {
     humidityStatus: number;
     batteryLevel: number;
     rssi: number;
-};
+}
 
 interface ILighting1Event /*extends IBasicEvent*/ { // Can't use basic type, substype has type string.
     id: string;
@@ -104,7 +104,7 @@ interface ILighting1Event /*extends IBasicEvent*/ { // Can't use basic type, sub
     unitcode: number;
     command: string;
     rssi: number;
-};
+}
 
 interface ILighting2Event extends IBasicEvent {
     seqnbr: number;
@@ -118,21 +118,21 @@ interface ILighting5Event extends IBasicEvent { // rssi also missing.
     unitcode: number;
     command: string;
     seqnbr: number;
-};
+}
 
 interface IRfxMeterEvent {
     subtype: number;
     id: string;
     seqnbr: number;
     counter: number;
-};
+}
 
 interface IWeightEvent extends IBasicEvent {
     seqnbr: number;
     weight: number;
     rssi: number;
     batteryLevel: number;
-};
+}
 
 interface IRfxComSensorEvent extends IBasicEvent {
     seqnbr: number;
@@ -148,19 +148,19 @@ interface ITempbaro12Event extends IBasicEvent {
     forecast: number;
     batteryLevel: number;
     rssi: number;
-};
+}
 
 interface IBasicDeviceAddress {
     houseCode: number;
     unitCode: number;
-};
+}
 
 interface IRfxComBaseItem<TAddress> {
     rfxcom: IRfxCom;
     subtype: number;
 
     _splitDeviceId: (deviceId: string) => TAddress;
-};
+}
 
 // Curtain1
 
@@ -198,20 +198,20 @@ interface ILighting2 extends IRfxComBaseItem<ILightingAddress2And5> {
 interface ILightingAddress2And5 {
     idBytes: number[];
     unitCode: string;
-};
+}
 
 // Lighting 5
 interface ILighting5CommandOptions {
     mood: number;
     level: number;
-};
+}
 
 interface ILighting5 extends IRfxComBaseItem<ILightingAddress2And5> {
     _sendCommand(deviceId: string, command: number, somethingForLighting2: any, callback: (error, response, cmdId: number) => any);
 
     switchOn: (deviceId: string, options: ILighting5CommandOptions, callback: (error, response, cmdId: number) => any) => any;
     switchOff: (deviceId: string, callback: (error, response, cmdId: number) => any) => any;
-};
+}
 
 // Exports
 interface IExportProtocolDefinition {
@@ -268,7 +268,7 @@ interface IExportsLighting2 {
     AC: number;
     HOMEEASY_EU: number;
     ANSLUT: number;
-};
+}
 
 interface IExportsElec23 {
     CM119_160: number;
@@ -279,7 +279,7 @@ interface IExportsLighting5 {
     LIGHTWAVERF: number;
     EMW100: number;
     BBSB: number;
-};
+}
 
 interface IExportsLighting1 {
     X10: number;
@@ -291,7 +291,7 @@ interface IExportsLighting1 {
     RISING_SUN: number;
     PHILIPS_SBC: number;
     ENERGENIE: number;
-};
+}
 
 interface IExportsForecast {
     NO_FORECAST: number;
@@ -306,9 +306,9 @@ interface IExportsRfxSensor {
     AD: number;
     VOLTAGE: number;
     MESSAGE: number;
-};
+}
 
-interface IExports {
+interface IRfxComExports {
     RfxCom: any;
     Lighting1;
     Lighting2;

@@ -655,7 +655,7 @@ util.inherits(RfxCom, EventEmitter);
         message: undefined,
     };
 
-    var rfxComSensor: IExports = rfxcom;
+    var rfxComSensor: IRfxComExports = rfxcom;
 
     switch (evt.subtype) {
         case rfxComSensor.rfxsensor.TEMP:

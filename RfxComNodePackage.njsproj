@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{cbb17017-9699-43e9-827c-3da51aea7a26}</ProjectGuid>
     <ProjectHome />
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <StartupFile>server.ts</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -34,7 +34,7 @@
     <TypeScriptCompile Include="lib\lighting2.ts" />
     <TypeScriptCompile Include="lib\lighting5.ts" />
     <TypeScriptCompile Include="lib\rfxcom.ts" />
-    <TypeScriptCompile Include="lib\_interfaces.ts" />
+    <TypeScriptCompile Include="lib\rfxom.ts" />
     <TypeScriptCompile Include="lib\_references.ts" />
     <Compile Include="test\curtain1.spec.js" />
     <Compile Include="test\helper.js" />
